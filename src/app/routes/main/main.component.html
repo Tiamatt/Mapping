@@ -1,10 +1,10 @@
-<mgl-map
+<mgl-map *ngIf="coordinates"
 [style]="'mapbox://styles/mapbox/streets-v9'"
 [zoom]="[1]"
 [center]="[0, 0]"
 [scrollZoom]="true"
 >
-  <mgl-marker *ngFor="let geo of geoArr" [lngLat]="geo">
+  <mgl-marker *ngFor="let coordinate of coordinates" [lngLat]="coordinate">
     <app-pin-svg iconColor="blue"></app-pin-svg>
   </mgl-marker>
 </mgl-map>

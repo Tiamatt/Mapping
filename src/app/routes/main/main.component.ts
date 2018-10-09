@@ -1,3 +1,4 @@
+import { CoorditanesService } from '../../shared/services/coorditanes.service';
 import { BaseComponent } from './../../core/BaseComponent';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,18 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent extends BaseComponent implements OnInit {
-  geoArr=[
-    [-10, 20],
-    [-10, -20],
-    [10, 20],
-    [10, -20]
-  ];
+  coordinates: any;
   
-  constructor() {
+  constructor(
+    private coorditaneService: CoorditanesService,
+  ) {
     super();
    }
 
+  private setCoordinates() {
+    this.coordinates = this.coorditaneService.getRandomMarkers(5);
+  }
+
   ngOnInit() {
+    this.setCoordinates();
   }
 
 }

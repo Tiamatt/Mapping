@@ -7,9 +7,9 @@ import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 // components
 import { AppComponent } from './app.component';
 import { ContentComponent } from './layout/content/content.component';
-import { MainComponent } from './routes/main/main.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { MainComponent } from './routes/main/main.component';
 import { PinSvgComponent } from './shared/pin-svg/pin-svg.component';
 
 @NgModule({

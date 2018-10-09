@@ -10,6 +10,7 @@ import { ContentComponent } from './layout/content/content.component';
 import { MainComponent } from './routes/main/main.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { PinSvgComponent } from './shared/pin-svg/pin-svg.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FooterComponent } from './layout/footer/footer.component';
     MainComponent,
     HeaderComponent,
     FooterComponent,
+    PinSvgComponent,
   ],
   imports: [
     BrowserModule,

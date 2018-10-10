@@ -25,6 +25,7 @@
     "core-js": "^2.5.4",
     "mapbox-gl": "^0.48.0",
     "ngx-mapbox-gl": "^2.1.1",
+    "ngx-spinner": "^6.1.2",
     "rxjs": "~6.2.0",
     "web-animations-js": "^2.3.1",
     "zone.js": "~0.8.26"

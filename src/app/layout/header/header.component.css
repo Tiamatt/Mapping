@@ -1,0 +1,13 @@
+.navbar{
+    font-family: 'Source Sans Pro', sans-serif;
+    border-bottom: 3px solid rgba(228,155,36,1);
+    height: 50px;
+}
+.text-link-c{
+    font-size: 1.1rem;
+    color: rgba(228,155,36,1) !important;
+    font-weight: 600;
+}
+/* .text-link-c:hover{
+    color: rgba(206,214,212,1) !important;
+} */

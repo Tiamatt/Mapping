@@ -9,3 +9,12 @@ mgl-map {
 .input-c{
     width: 80px;
 }
+
+
+/*
+Incorrect free space calculation with flex items in IE 11 (center an object):
+The bug is present only in IE11 in any flex direction. IE10 doesn't have it, and it was fixed in Edge. It even doesn't show up in IE11 emulation mode in Edge.
+There is no way to walkaround this bug, it can only be avoided by removing properties that causes it
+https://github.com/philipwalton/flexbugs/issues/231 
+https://alastairc.ac/2014/08/flexbox-ie11-bugs/ 
+*/

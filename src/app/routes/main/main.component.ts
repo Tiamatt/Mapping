@@ -24,6 +24,14 @@ export class MainComponent extends BaseComponent implements OnInit {
     super();
   }
 
+  private getRandomLongitude() {
+    return this.coorditaneService.generateRandomWithinRange(-180, 180);
+  }
+
+  private getRandomLatitude() {
+    return this.coorditaneService.generateRandomWithinRange();
+  }
+
   private setFormGroup() {
     this.mainFormGroup = new FormGroup({
       'amountOfMarkers': new FormControl(this.defaultAmountOfMarkers),
@@ -66,21 +74,22 @@ export class MainComponent extends BaseComponent implements OnInit {
     let countByColor = [];
 
     for(let i=0; i<quantity; i++){
-      let longitude = this.coorditaneService.generateRandomWithinRange();
-      let latitude = this.coorditaneService.generateRandomWithinRange();
+      let longitude = this.getRandomLongitude();
+      let latitude = this.getRandomLatitude();
       let markerColor = this.coorditaneService.getMarkerColor(longitude, latitude);
       // add to coordinates
-      coordinates.push(new CoordinateClass(latitude, longitude, markerColor));
+      coordinates.push(new CoordinateClass(longitude, latitude, markerColor));
       // add to countByColor, example: [{green: 2}, {red: 8}]
       countByColor[markerColor] = (countByColor[markerColor]) ? countByColor[markerColor]+1 : 1;
     }
     this.coordinates = coordinates;
     this.setLabels(countByColor);
+    console.log(coordinates);
   }
 
   onSubmit() {
     let amountOfMarkers = this.mainFormGroup.value['amountOfMarkers'];
-    if(Number.isInteger(amountOfMarkers) && amountOfMarkers>0){
+    if (Number.isInteger(amountOfMarkers) && amountOfMarkers>0){
       this.setCoordinates(amountOfMarkers);
     }
   }

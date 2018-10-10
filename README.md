@@ -1,16 +1,21 @@
 # Mapping app
-This [web application](https://Tiamatt.github.io/Mapping/)  is a lightweight visualization of randomly generated coordinates.
+This [web application](https://Tiamatt.github.io/Mapping/)  is a lightweight visualization of randomly generated coordinates. You can specify number of coordinates you want to see between 1 and 10 000. Each coordinate marker has its own color based on the hemispere it belongs to:
+* Northeast - Green
+* Northwest - Blue
+* Southeast - Red
+* Southwest - Yellow
+This project is part of assessment for MapAnything
 
 ## DEMO
-Live DEMO [here](https://Tiamatt.github.io/Mapping/) </br>
-</br>
+Live DEMO [here](https://Tiamatt.github.io/Mapping/) <br>
+<br>
 ![MappingScreenshot](/src/assets/images/app-screenshot.png?raw=true "Mapping screenshot")
 
 
 ## Features
 * Fully responsive design
-* Using Subject (Rx observable)
 * Shared components
+* OOP approach
 
 ## Built With
 * Angular 6 (TypeScript)
@@ -22,30 +27,25 @@ Live DEMO [here](https://Tiamatt.github.io/Mapping/) </br>
 
 
 
-
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Getting Started
+Note, this project requires Node.js installation.</br>
+Follow the steps:
+```bash
+# step 1. Go to Node.js official website and install it
+# check Node.js version (v8.12.0 or upper)
+$ node –v
+# check npm version (v6.4.1 or upper)
+$ npm -v
+# step 2. install Angular CLI
+$ npm install -g @angular/cli
+# check Angular CLI version (v6.2.3 or upper)
+$ ng -v
+# step 3. import project from github 
+$ git clone https://github.com/Tiamatt/Mapping
+$ cd Mapping
+# step 4. install the project's dependencies (node_modules folder)
+$ npm install
+# step 5. run application
+$ ng serve
+# navigate to `http://localhost:4200/`
+# app will automatically reload if you change any of the source files.

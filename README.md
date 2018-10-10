@@ -1,10 +1,5 @@
 # Mapping app
-This [web application](https://Tiamatt.github.io/Mapping/)  is a lightweight visualization of randomly generated coordinates. You can specify number of coordinates you want to see on the map. Each coordinate marker has its own color based on the hemisphere it belongs to:
-* Northeast - green
-* Northwest - blue
-* Southeast - red
-* Southwest - yellow
-This project is a part of assessment for MapAnything
+This [web application](https://Tiamatt.github.io/Mapping/)  is a lightweight visualization of randomly generated coordinates. You can specify number of coordinates you want to see on the map. Each coordinate marker has its own color based on the hemisphere it belongs to.
 
 ## DEMO
 Live DEMO [here](https://Tiamatt.github.io/Mapping/) <br>

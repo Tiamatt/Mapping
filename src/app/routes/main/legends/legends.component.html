@@ -1,24 +1,20 @@
-<div class="container legends-c" *ngIf="legends">
-    <div class="row">
-        <div class="col-2">
-
-        </div>
-        <div class="col-6">
-          Hemisphere
-        </div>
-        <div class="col-4">
-          Count
-        </div>
-      </div>
-
-    <div class="row" *ngFor="let legend of legends">
-      <div class="col-2" [ngStyle]="{'background': legend.color}">
-      </div>
-      <div class="col-6">
-          {{legend.title}}
-      </div>
-      <div class="col-4">
-        {{legend.count}}
-      </div>
-    </div>
-  </div>
+<table class="table table-sm" *ngIf="legends">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col">Hemisphere</th>
+        <th scope="col">Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let legend of legends">
+        <th scope="row">
+          <input type="checkbox" name="legends"/>
+        </th>
+        <td [ngStyle]="{'background': legend.color}" class="p-2"></td>
+        <td>{{legend.title}}</td>
+        <td>{{legend.count}}</td>
+      </tr>
+    </tbody>
+  </table>

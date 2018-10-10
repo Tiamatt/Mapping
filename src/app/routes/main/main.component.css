@@ -1,4 +1,11 @@
+.row-c{
+    padding: 20px 0;
+}
+
 mgl-map {
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    min-height: 600px;
+}
+.input-c{
+    width: 80px;
 }

@@ -38,7 +38,7 @@ export class MainComponent extends BaseComponent implements OnInit {
     });
   }
 
-  private onCheckedLegends(legends: LegendClass[]) {
+  onCheckedLegends(legends: LegendClass[]) {
     let checkedColors = [];
     // note: loop is better, because with filter + map there will be two itterations
     for(let legend of legends){

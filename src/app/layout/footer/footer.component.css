@@ -1,0 +1,14 @@
+.footer-c{
+    border-top: 3px solid rgba(228,155,36,1);
+    height: 40px;
+    line-height: 40px;
+}
+
+.footer-c span, .footer-c a {
+    font-size: 0.9rem;
+    color: rgba(228,155,36,1) !important;
+    font-weight: 600;
+}
+.footer-c a {
+    text-decoration: underline;
+}

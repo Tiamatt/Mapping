@@ -5,5 +5,6 @@ export class CoordinateClass {
         public longitude: number,
         public latitude: number,
         public markerColor: MarkerColorsEnum,
+        public isShown: boolean, 
     ){}
 }

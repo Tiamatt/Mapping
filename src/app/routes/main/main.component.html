@@ -10,7 +10,7 @@
         [scrollZoom]="true"
         >
           <mgl-marker *ngFor="let coordinate of coordinates" [lngLat]="[coordinate.longitude, coordinate.latitude]">
-            <app-pin-svg [iconColor]="coordinate.markerColor"></app-pin-svg>
+            <app-pin-svg *ngIf="coordinate.isShown" [iconColor]="coordinate.markerColor"></app-pin-svg>
           </mgl-marker>
         </mgl-map>
 
@@ -39,7 +39,7 @@
           <br>
 
           <!-- legends -->
-          <app-legends [legends]="legends"></app-legends>
+          <app-legends [legends]="legends" (checkedLegends)="onCheckedLegends($event)"></app-legends>
           <div class="d-flex justify-content-center">
             <button type="button" (click)="onSubmit()" class="btn btn-dark mx-auto">Refresh</button>
           </div>

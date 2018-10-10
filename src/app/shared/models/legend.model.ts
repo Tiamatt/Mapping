@@ -5,5 +5,6 @@ export class LegendClass {
         public title: string,
         public color: MarkerColorsEnum,
         public count: number,
+        public isChecked: boolean,
     ){}
 }

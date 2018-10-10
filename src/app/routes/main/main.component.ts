@@ -38,6 +38,22 @@ export class MainComponent extends BaseComponent implements OnInit {
     });
   }
 
+  private onCheckedLegends(legends: LegendClass[]) {
+    let checkedColors = [];
+    // note: loop is better, because with filter + map there will be two itterations
+    for(let legend of legends){
+      if(legend.isChecked) {
+        checkedColors.push(legend.color);
+      }
+    }
+    // change isShown for each coordinate based on checked legends
+    this.coordinates.forEach(item => { 
+      // note! "includes" is not supported in IE11
+      // item.isShown = (checkedColors.includes(item.markerColor));
+      item.isShown = (checkedColors.indexOf(item.markerColor) === -1) ? false : true;
+    });
+  }
+
   private setLabels(countByColor: object) {
     let labels = [];
     for(let item in countByColor) {      
@@ -63,7 +79,7 @@ export class MainComponent extends BaseComponent implements OnInit {
           color = MarkerColorsEnum.Southwest;
           break;
       }
-      labels.push(new LegendClass(title, color, countByColor[color]));
+      labels.push(new LegendClass(title, color, countByColor[color], true));
     }
 
     this.legends = labels;
@@ -78,7 +94,7 @@ export class MainComponent extends BaseComponent implements OnInit {
       let latitude = this.getRandomLatitude();
       let markerColor = this.coorditaneService.getMarkerColor(longitude, latitude);
       // add to coordinates
-      coordinates.push(new CoordinateClass(longitude, latitude, markerColor));
+      coordinates.push(new CoordinateClass(longitude, latitude, markerColor, true));
       // add to countByColor, example: [{green: 2}, {red: 8}]
       countByColor[markerColor] = (countByColor[markerColor]) ? countByColor[markerColor]+1 : 1;
     }

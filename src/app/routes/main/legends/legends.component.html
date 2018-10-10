@@ -10,7 +10,10 @@
     <tbody>
       <tr *ngFor="let legend of legends">
         <th scope="row">
-          <input type="checkbox" name="legends"/>
+          <input type="checkbox" name="legends" 
+          value="legend.color" [checked]="legend.isChecked"
+          (change)="onLegendChecked(legend, $event)"
+          />
         </th>
         <td [ngStyle]="{'background': legend.color}" class="p-2"></td>
         <td>{{legend.title}}</td>

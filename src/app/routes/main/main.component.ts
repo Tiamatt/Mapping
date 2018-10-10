@@ -57,7 +57,7 @@ export class MainComponent extends BaseComponent implements OnInit {
   }
 
   private setLabels(countByColor: object) {
-    let labels = [];
+    let legends: LegendClass[] = [];
     for(let item in countByColor) {      
       let title = '';
       let color;
@@ -81,10 +81,10 @@ export class MainComponent extends BaseComponent implements OnInit {
           color = MarkerColorsEnum.Southwest;
           break;
       }
-      labels.push(new LegendClass(title, color, countByColor[color], true));
+      legends.push(new LegendClass(title, color, countByColor[color], true));
     }
 
-    this.legends = labels;
+    this.legends = this.coorditaneService.sortObjectAlphabetically(legends, 'title');
   }
 
   private setCoordinatesAndLabels(quantity: number) {

@@ -36,4 +36,20 @@ export class CoorditanesService {
     }
   }
 
+  sortObjectAlphabetically(arrayOfObjects: any[], propName: string) {
+    if(!propName) {
+      return arrayOfObjects;
+    }
+
+    return arrayOfObjects.sort((a,b) => {
+      if (a[propName] < b[propName]) { 
+        return -1; 
+      }
+      else if (a[propName] > b[propName]){ 
+        return 1; 
+      }
+      return 0;
+    });
+  }
+
 }

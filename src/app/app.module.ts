@@ -1,10 +1,12 @@
 // modules
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // need for toastr
 import { NgModule } from '@angular/core';
 import { AppRoutesModule } from './routes/routes.module';
-import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl'; // npm package for Mapbox GL free map 
+import { NgxSpinnerModule } from 'ngx-spinner';  // npm package for loading spinner
+import { ToastrModule } from 'ng6-toastr-notifications'; // npm package for toaster messages
 
 // components
 import { AppComponent } from './app.component';
@@ -29,6 +31,7 @@ import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loa
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutesModule,
     ReactiveFormsModule, 
     FormsModule,
@@ -36,6 +39,7 @@ import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loa
       accessToken: 'pk.eyJ1IjoidGlhbWF0dCIsImEiOiJjam4xMW1paW0yOWpoM3huMW53cGowb2RoIn0.IXRgljb3wZmoHFckij_Gmw',
     }),
     NgxSpinnerModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

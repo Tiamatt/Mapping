@@ -6,6 +6,7 @@ import { LegendClass } from './../../shared/models/legend.model';
 import { CoordinateClass } from './../../shared/models/coordinate.model';
 import { CoorditanesService } from '../../shared/services/coorditanes.service';
 import { MarkerColorsEnum } from '../../shared/enums/marker-colors.enum';
+import { ToastrManager } from 'ng6-toastr-notifications';
 
 @Component({
   selector: 'app-main',
@@ -20,6 +21,7 @@ export class MainComponent extends BaseComponent implements OnInit {
 
   constructor(
     private coorditaneService: CoorditanesService,
+    private toastrManager: ToastrManager,
   ){
     super();
   }
@@ -104,10 +106,11 @@ export class MainComponent extends BaseComponent implements OnInit {
 
   onSubmit() {
     let amountOfMarkers = this.mainFormGroup.value['amountOfMarkers'];
-    if (Number.isInteger(amountOfMarkers) && amountOfMarkers>0){
+    if (Number.isInteger(amountOfMarkers) && amountOfMarkers>0 && amountOfMarkers<=10000){
       this.setCoordinatesAndLabels(amountOfMarkers);
+    } else {
+      this.toastrManager.warningToastr('Please enter a valid number for markers between 1 and 10 000', 'Invalid number!', { position: "bottom-right" });
     }
-    // kali - if wrong???
   }
 
   ngOnInit() {

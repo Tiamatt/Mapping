@@ -6,6 +6,11 @@
 ============ FONTS ===========
 font-family: 'Source Sans Pro', sans-serif;
 */
-body{
+html,body {
+    background: #DCD7CD; /* rgb(188, 193, 199); */
     font-family: 'Source Sans Pro', sans-serif;
+    /* ---  FULL HEIGHT OF THE PAGE --- */
+    margin:0;
+    padding:0;
+    height:100%; /* needed for container min-height */
 }

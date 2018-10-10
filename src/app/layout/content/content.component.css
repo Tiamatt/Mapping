@@ -1,4 +1,8 @@
 .content-c{
-    margin: 50px 0 0 0;
-    background: #DCD7CD; /* rgb(188, 193, 199); */
+    padding: 50px 0 0 0;
+    /* ---  FULL HEIGHT OF THE PAGE --- */
+    position:relative; /* needed for footer positioning*/
+    height:auto !important; /* real browsers */
+    height: 96%; /* IE6: treaded as min-height*/
+    min-height:96%; /* real browsers */
 }

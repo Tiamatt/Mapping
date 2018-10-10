@@ -1,0 +1,24 @@
+<div class="container legends-c" *ngIf="legends">
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-6">
+          Hemisphere
+        </div>
+        <div class="col-4">
+          Count
+        </div>
+      </div>
+
+    <div class="row" *ngFor="let legend of legends">
+      <div class="col-2" [ngStyle]="{'background': legend.color}">
+      </div>
+      <div class="col-6">
+          {{legend.title}}
+      </div>
+      <div class="col-4">
+        {{legend.count}}
+      </div>
+    </div>
+  </div>

@@ -11,6 +11,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { MainComponent } from './routes/main/main.component';
 import { PinSvgComponent } from './shared/pin-svg/pin-svg.component';
+import { LegendsComponent } from './routes/main/legends/legends.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PinSvgComponent } from './shared/pin-svg/pin-svg.component';
     HeaderComponent,
     FooterComponent,
     PinSvgComponent,
+    LegendsComponent,
   ],
   imports: [
     BrowserModule,

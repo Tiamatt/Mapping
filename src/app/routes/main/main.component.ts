@@ -12,7 +12,7 @@ import { MarkerColorsEnum } from '../../shared/enums/marker-colors.enum';
 })
 export class MainComponent extends BaseComponent implements OnInit {
   coordinates: CoordinateClass[];
-  labels: LegendClass[];
+  legends: LegendClass[];
 
   constructor(
     private coorditaneService: CoorditanesService,
@@ -34,21 +34,21 @@ export class MainComponent extends BaseComponent implements OnInit {
           break;
         case MarkerColorsEnum.Northwest:
           title = "Northwest";
-          color = MarkerColorsEnum.Northeast;
+          color = MarkerColorsEnum.Northwest;
           break;
         case MarkerColorsEnum.Southeast:
           title = "Southeast";
-          color = MarkerColorsEnum.Northeast;
+          color = MarkerColorsEnum.Southeast;
           break;
         default:
           title = "Southwest";
-          color = MarkerColorsEnum.Northeast;
+          color = MarkerColorsEnum.Southwest;
           break;
       }
       labels.push(new LegendClass(title, color, countByColor[color]));
     }
 
-    this.labels = labels;
+    this.legends = labels;
   }
 
   private setCoordinates(quantity: number) {
@@ -69,7 +69,7 @@ export class MainComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.setCoordinates(10);
+    this.setCoordinates(200);
   }
 
 }

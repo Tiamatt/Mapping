@@ -31,7 +31,7 @@
                   </div>
                 </div>
                 <div class="col-auto">
-                  <button type="submit" class="btn btn-dark mb-2">Fetch</button>
+                  <button type="submit" class="btn btn-warning mb-2">Fetch</button>
                 </div>
               </div>
           </form>
@@ -40,7 +40,9 @@
 
           <!-- legends -->
           <app-legends [legends]="legends"></app-legends>
-  
+          <div class="d-flex justify-content-center">
+            <button type="button" (click)="onSubmit()" class="btn btn-dark mx-auto">Refresh</button>
+          </div>
       </div>
 
     </div>

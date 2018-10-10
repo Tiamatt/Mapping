@@ -69,7 +69,7 @@ export class MainComponent extends BaseComponent implements OnInit {
     this.legends = labels;
   }
 
-  private setCoordinates(quantity: number) {
+  private setCoordinatesAndLabels(quantity: number) {
     let coordinates = [];
     let countByColor = [];
 
@@ -84,19 +84,19 @@ export class MainComponent extends BaseComponent implements OnInit {
     }
     this.coordinates = coordinates;
     this.setLabels(countByColor);
-    console.log(coordinates);
   }
 
   onSubmit() {
     let amountOfMarkers = this.mainFormGroup.value['amountOfMarkers'];
     if (Number.isInteger(amountOfMarkers) && amountOfMarkers>0){
-      this.setCoordinates(amountOfMarkers);
+      this.setCoordinatesAndLabels(amountOfMarkers);
     }
+    // kali - if wrong???
   }
 
   ngOnInit() {
     this.setFormGroup();
-    this.setCoordinates(this.defaultAmountOfMarkers);
+    this.setCoordinatesAndLabels(this.defaultAmountOfMarkers);
   }
 
 }

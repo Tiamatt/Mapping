@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutesModule } from './routes/routes.module';
 import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 // components
 import { AppComponent } from './app.component';
@@ -26,6 +27,8 @@ import { LegendsComponent } from './routes/main/legends/legends.component';
   imports: [
     BrowserModule,
     AppRoutesModule,
+    ReactiveFormsModule, 
+    FormsModule,
     NgxMapboxGLModule.withConfig({
       accessToken: 'pk.eyJ1IjoidGlhbWF0dCIsImEiOiJjam4xMW1paW0yOWpoM3huMW53cGowb2RoIn0.IXRgljb3wZmoHFckij_Gmw',
     }),

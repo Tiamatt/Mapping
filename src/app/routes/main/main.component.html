@@ -1,3 +1,11 @@
+<!-- form -->
+<form [formGroup]="mainFormGroup" (ngSubmit)="onSubmit()">
+    <label for="name">Amount of markers</label>
+    <input type="number" min="0" id="amountOfMarkers" formControlName="amountOfMarkers" class="form-control" placeholder="amount of markers">
+    <button type="submit" class="btn btn-primary m-2">Fetch</button>
+</form>
+
+<!-- map -->
 <mgl-map *ngIf="coordinates"
 [style]="'mapbox://styles/mapbox/streets-v9'"
 [zoom]="[1]"
@@ -8,5 +16,5 @@
     <app-pin-svg [iconColor]="coordinate.markerColor"></app-pin-svg>
   </mgl-marker>
 </mgl-map>
-
+<!-- legends -->
 <app-legends [legends]="legends"></app-legends>

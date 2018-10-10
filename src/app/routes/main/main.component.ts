@@ -1,6 +1,8 @@
-import { LegendClass } from './../../shared/models/legend.model';
-import { BaseComponent } from './../../core/BaseComponent';
+
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { BaseComponent } from './../../core/BaseComponent';
+import { LegendClass } from './../../shared/models/legend.model';
 import { CoordinateClass } from './../../shared/models/coordinate.model';
 import { CoorditanesService } from '../../shared/services/coorditanes.service';
 import { MarkerColorsEnum } from '../../shared/enums/marker-colors.enum';
@@ -13,11 +15,19 @@ import { MarkerColorsEnum } from '../../shared/enums/marker-colors.enum';
 export class MainComponent extends BaseComponent implements OnInit {
   coordinates: CoordinateClass[];
   legends: LegendClass[];
+  mainFormGroup: FormGroup;
+  private defaultAmountOfMarkers: number = 200;
 
   constructor(
     private coorditaneService: CoorditanesService,
   ){
     super();
+  }
+
+  private setFormGroup() {
+    this.mainFormGroup = new FormGroup({
+      'amountOfMarkers': new FormControl(this.defaultAmountOfMarkers),
+    });
   }
 
   private setLabels(countByColor: object) {
@@ -68,8 +78,16 @@ export class MainComponent extends BaseComponent implements OnInit {
     this.setLabels(countByColor);
   }
 
+  onSubmit() {
+    let amountOfMarkers = this.mainFormGroup.value['amountOfMarkers'];
+    if(Number.isInteger(amountOfMarkers) && amountOfMarkers>0){
+      this.setCoordinates(amountOfMarkers);
+    }
+  }
+
   ngOnInit() {
-    this.setCoordinates(200);
+    this.setFormGroup();
+    this.setCoordinates(this.defaultAmountOfMarkers);
   }
 
 }

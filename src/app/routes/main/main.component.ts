@@ -17,7 +17,8 @@ export class MainComponent extends BaseComponent implements OnInit {
   coordinates: CoordinateClass[];
   legends: LegendClass[];
   mainFormGroup: FormGroup;
-  private defaultAmountOfMarkers: number = 200;
+  defaultAmountOfMarkers: number = 200;
+  maxAmountOfMarkers: number = 3000;
 
   constructor(
     private coorditaneService: CoorditanesService,
@@ -106,10 +107,10 @@ export class MainComponent extends BaseComponent implements OnInit {
 
   onSubmit() {
     let amountOfMarkers = this.mainFormGroup.value['amountOfMarkers'];
-    if (Number.isInteger(amountOfMarkers) && amountOfMarkers>0 && amountOfMarkers<=10000){
+    if (Number.isInteger(amountOfMarkers) && amountOfMarkers>0 && amountOfMarkers<=this.maxAmountOfMarkers){
       this.setCoordinatesAndLabels(amountOfMarkers);
     } else {
-      this.toastrManager.warningToastr('Please enter a valid number for markers between 1 and 10 000', 'Invalid number!', { position: "bottom-right" });
+      this.toastrManager.warningToastr('Please enter a valid number for markers between 1 and ' + this.maxAmountOfMarkers, 'Invalid number!', { position: "bottom-right" });
     }
   }
 

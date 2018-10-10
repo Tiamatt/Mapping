@@ -1,4 +1,28 @@
-# Mapping
+# Mapping app
+This [web application](https://Tiamatt.github.io/Mapping/)  is a lightweight visualization of randomly generated coordinates.
+
+## DEMO
+Live DEMO [here](https://Tiamatt.github.io/Mapping/) </br>
+</br>
+![MappingScreenshot](/src/assets/images/app-screenshot.png?raw=true "Mapping screenshot")
+
+
+## Features
+* Fully responsive design
+* Using Subject (Rx observable)
+* Shared components
+
+## Built With
+* Angular 6 (TypeScript)
+* Angular CLI v6.2.3
+* Angular Mapbox (v2.1.1)
+* Angular Toaster Notifications (v1.0.4)
+* Bootstrap v4.1.3
+* Google fonts
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
